@@ -9,6 +9,9 @@ import {
 
 import { connect } from "react-redux";
 
+import SmurfTable from "./SmurfTable";
+
+
 const App = props => {
 
     useEffect(() => {
@@ -22,7 +25,6 @@ const App = props => {
       const setCurrent = id => {
         currentlyEditing = true;
         smurf = props.smurfs.filter((smurf) => smurf.id === id);
-        // console.log(current, currentlyEditing);
       }
      
       const putSmurf = (id, smurf) => {
@@ -31,7 +33,7 @@ const App = props => {
 
     return (
         <div className="App">
-            <p>Testing</p>
+            <SmurfTable {...props} current={setCurrent}/>
         </div>
     )
 }
