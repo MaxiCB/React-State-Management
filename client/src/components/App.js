@@ -10,7 +10,7 @@ import {
 import { connect } from "react-redux";
 
 import SmurfTable from "./SmurfTable";
-
+import SmurfForm from "./SmurfForm";
 
 const App = props => {
 
@@ -18,7 +18,7 @@ const App = props => {
         props.getSmurfs();
       }, [])
     
-      let currentlyEditing = true;
+      let currentlyEditing = false;
     
       let smurf;
     
@@ -34,6 +34,7 @@ const App = props => {
     return (
         <div className="App">
             <SmurfTable {...props} current={setCurrent}/>
+            <SmurfForm {...props} editing={currentlyEditing} current={smurf}/>
         </div>
     )
 }
